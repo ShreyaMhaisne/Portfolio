@@ -43,9 +43,7 @@ const Project = () => {
       }
     });
 
-    // Language filter buttons animation (same style as heading)
     gsap.from(".project-filters button", {
-      y: 80,
       opacity: 0,
       stagger: 0.15,
       duration: 0.8,

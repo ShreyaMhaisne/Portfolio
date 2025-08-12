@@ -1,13 +1,18 @@
 .skills-section {
   backdrop-filter: blur(12px);
   color: #ffffff;
+  margin: 2rem auto 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 90%;
-  max-width: 1000px;
-  margin: 3rem auto 1rem;
+  height: 100vh;
   padding: 50px 40px;
   border-radius: 15px;
   position: relative;
   scroll-margin-top: 60px;
+    /* transform: translateY(-40px); */
 }
 
 .skill-category {
@@ -56,24 +61,32 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
   width: 100%;
+  align-items: stretch;
 }
 
 
 .skill-card {
   border-radius: 15px;
   padding: 30px;
+  min-width: 220px;
   border: 0.1px solid rgba(255, 255, 255, 0.08);
   transition: transform 0.3s ease, border-color 0.3s ease;
   display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
   flex-direction: column;
   gap: 10px;
+  width: 100%;         /* fill grid cell */
+  align-self: stretch; 
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
   /* border: 0.1px solid #dab0f8; */
-   box-shadow: 2px 2px 10px rgb(127, 216, 254),2px 2px 5px rgb(127, 216, 254);
+  box-shadow: 2px 2px 10px rgb(127, 216, 254), 2px 2px 5px rgb(127, 216, 254);
 
 }
 
@@ -91,6 +104,7 @@
 .skill-items {
   display: flex;
   flex-wrap: wrap;
+    margin-top: -20px;
   gap: 10px;
 }
 
@@ -98,6 +112,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  /* margin-top: -20px; */
   padding: 4px 10px;
   background: rgba(255, 255, 255, 0.07);
   border-radius: 20px;

@@ -55,7 +55,7 @@ const About = () => {
   return (
     <div id="about">
       <div className="about-header">
-        <h1 className="about-name">Shreya Mahsine</h1>
+        <h1 className="about-name">Shreya Mhaisne</h1>
         <div className="about-icons">
           <a href="https://www.linkedin.com/in/shreya-mhaisne-52928333a/" target="_blank" rel="noreferrer"><FaLinkedin /></a> 
           <a href="https://github.com/ShreyaMhaisne" target="_blank" rel="noreferrer"><FaGithub /></a>

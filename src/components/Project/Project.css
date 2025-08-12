@@ -2,6 +2,7 @@
     width: 100%;
     min-height: 100vh;
     display: flex;
+    /* background-color: aquamarine; */
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -41,13 +42,14 @@
   display: flex;
   gap: 12px;
   justify-content: center;
-  margin-bottom: 25px;
+  /* background-color: #bf77f3; */
+  margin: 10px;
   flex-wrap: wrap;
 }
 
 .project-filters button {
   padding: 8px 18px;
-  margin-top: 20px;
+  margin: 4px 0px 0px 0px;
   border: none;
   background: #ddd;
   border-radius: 6px;
