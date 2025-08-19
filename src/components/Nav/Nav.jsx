@@ -30,6 +30,7 @@ const Nav = () => {
       <ul className='desktopmenu'>
         <Link to="home" smooth={true} spy={true} activeClass='active' duration={500}><li>Home</li></Link>
         <Link to="about" smooth={true} spy={true} activeClass='active' duration={500}><li>About</li></Link>
+        <Link to="education" smooth={true} spy={true} activeClass='active' duration={500}><li>Education</li></Link>
         <Link to="Skills" smooth={true} spy={true} activeClass='active' duration={500}><li>Skills</li></Link>
         <Link to="projects" smooth={true} spy={true} activeClass='active' duration={500}><li>Projects</li></Link>
         <Link to="contact" smooth={true} spy={true} activeClass='active' duration={500}><li>Contact</li></Link>
@@ -45,6 +46,7 @@ const Nav = () => {
         <ul className='mobilemenu' ref={mobile}>
         <Link to="home" smooth={true} spy={true} activeClass='active' duration={500}><li>Home</li></Link>
         <Link to="about" smooth={true} spy={true} activeClass='active' duration={500}><li>About</li></Link>
+        <Link to="education" smooth={true} spy={true} activeClass='active' duration={500}><li>Education</li></Link>
         <Link to="Skills" smooth={true} spy={true} activeClass='active' duration={500}><li>Skills</li></Link>
         <Link to="projects" smooth={true} spy={true} activeClass='active' duration={500}><li>Projects</li></Link>
         <Link to="contact" smooth={true} spy={true} activeClass='active' duration={500}><li>Contact</li></Link>

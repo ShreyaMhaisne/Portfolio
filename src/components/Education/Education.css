@@ -1,0 +1,89 @@
+#education {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+}
+
+.education-section {
+  text-align: center;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 4vmax;
+  background: linear-gradient(to right, #77b9fb, #d6affa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.education-grid {
+  display: flex;               
+  justify-content: center;     
+  align-items: center;         
+  flex-wrap: wrap;             
+  gap: 25px;                   
+}
+
+.education-card {
+  border-radius: 15px;
+  border: 0.1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  min-height: 180px;
+  text-align: center;
+  width: 350px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.education-card:hover {
+  transform: translateY(-8px);
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 6px rgb(127, 216, 254) ;
+}
+
+.education-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.education-card .field {
+  background: linear-gradient(to right, #e0c3fc, #c2e9fb);
+  background-clip: text;
+  margin-top: 15px;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.education-card .degree {
+  background: linear-gradient(to right, #97c7f8, #caa0f5);
+  background-clip: text;
+   margin-top: 8px;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.education-card .school {
+  font-size: 0.90rem;
+  background: linear-gradient(to right, #e7cdff, #f3e7ff);
+  background-clip: text;
+   margin-top: 8px;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.education-card .year,
+.education-card .grade {
+  font-size: 0.9rem;
+  background: linear-gradient(to right, #e2cbf8, #cfd9df);
+  background-clip: text; 
+  margin-top: 6px;
+  -webkit-background-clip: text;
+  color: transparent;
+}

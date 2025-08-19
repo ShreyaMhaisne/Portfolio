@@ -59,7 +59,6 @@ const About = () => {
         <div className="about-icons">
           <a href="https://www.linkedin.com/in/shreya-mhaisne-52928333a/" target="_blank" rel="noreferrer"><FaLinkedin /></a> 
           <a href="https://github.com/ShreyaMhaisne" target="_blank" rel="noreferrer"><FaGithub /></a>
-          {/* <a href="mailto:smhaisne6@gmail.com"><FaEnvelope /></a> */}
         </div>
       </div>
       <div className="about-description">
