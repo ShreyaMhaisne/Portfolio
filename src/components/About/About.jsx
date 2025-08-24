@@ -63,13 +63,15 @@ const About = () => {
       </div>
       <div className="about-description">
         <p>
-         I am an enthusiastic and highly motivated Full-Stack Web Developer with strong knowledge of both frontend and backend development, eager to apply my skills to real-world projects. As a recent Computer Science graduate from Modern College Shiavjinagar pune, I have built a solid understanding of modern web technologies, programming concepts, 
-         and problem-solving strategies through academic learning and personal projects.
-          I have a keen interest in building responsive, visually appealing, and performance-focused 
-          applications that deliver great user experiences. Although I am at the beginning of my professional 
-          journey, my dedication to continuous learning, ability to quickly adapt to new tools and frameworks,
-           and passion for clean, efficient coding make me confident in contributing value to any development
-            team.
+I’m a Java Full Stack Developer, Frontend Developer, and MERN Stack Developer passionate about building responsive and scalable web apps. Skilled in Java, Spring Boot, React, Node.js, Express, and MongoDB, I enjoy creating clean, efficient solutions across both frontend and backend.
+<br/><br/>
+Highlights:
+<br/>
+ Built 5+ projects (Netflix Clone, Currency Converter, Stopwatch, etc.) <br/>
+
+ Skilled in Java Full Stack + MERN Stack + modern frontend tools (React, Tailwind, Next.js)<br/>
+
+ Strong problem-solving mindset & quick learner<br/>
         </p>
         {/* <p>
           My journey as a developer has been driven by curiosity, persistence, and a desire to create meaningful digital experiences.

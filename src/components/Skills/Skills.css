@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   width: 90%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 50px 40px;
   border-radius: 15px;
   position: relative;
@@ -74,12 +74,10 @@
   border: 0.1px solid rgba(255, 255, 255, 0.08);
   transition: transform 0.3s ease, border-color 0.3s ease;
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
   flex-direction: column;
+  align-items: center;   /* 🔥 ensures consistent alignment */
   gap: 10px;
   width: 100%;
-  align-self: stretch;
 }
 
 .skill-card:hover {
@@ -101,8 +99,9 @@
 .skill-items {
   display: flex;
   flex-wrap: wrap;
-  margin-top: -20px;
   gap: 10px;
+  margin-top: 0;   /* 🔥 Reset so content aligns properly */
+  justify-content: center; /* keeps items centered like others */
 }
 
 .skill {

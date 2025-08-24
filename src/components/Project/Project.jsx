@@ -20,16 +20,15 @@ const Project = () => {
 
   const projects = [
     { id: 1, title: "Corrency Converter", image: curr, category: "js", link: "https://currency-converter-omega-amber.vercel.app/"  },
-    { id: 2, title: "NetFlix Clone Firebase", image: nc, category: "mern", link:"https://netflix-clone-sigma-pink-84.vercel.app/login" },
+    { id: 2, title: "NetFlix Clone Firebase", image: nc, category: "react", link:"https://netflix-clone-sigma-pink-84.vercel.app/login" },
     { id: 3, title: "Nykaa Static Clone", image: Nykaa, category: "htmlcss",link : "https://nykaa-static-website.vercel.app/"},
     { id: 4, title: "Stop Watch", image: stop, category: "js" ,link:"https://stop-watch-eight-amber.vercel.app/"},
     { id: 5, title: "paroz Static website", image: paroz, category: "htmlcss", link : "https://paroz-static-website.vercel.app/" },
-    { id: 6, title: "Hotel Booking Clerk", image: hotel, category: "mern" , link:"https://hotel-booking-dusky-alpha.vercel.app/"},
+    { id: 6, title: "Hotel Booking Clerk", image: hotel, category: "react" , link:"https://hotel-booking-dusky-alpha.vercel.app/"},
     { id: 7, title: "Static Bakery Website", image: bakery, category: "htmlcss",link: "https://static-bakery-website.vercel.app/"},
   ];
 
   useGSAP(() => {
-    // Project heading animation
     gsap.from("#para", {
       y: 100,
       duration: 1,
@@ -85,24 +84,30 @@ const Project = () => {
         <button className={filter === "all" ? "active" : ""} onClick={() => setFilter("all")}>All</button>
         <button className={filter === "htmlcss" ? "active" : ""} onClick={() => setFilter("htmlcss")}>HTML/CSS</button>
         <button className={filter === "js" ? "active" : ""} onClick={() => setFilter("js")}>JavaScript</button>
-        <button className={filter === "mern" ? "active" : ""} onClick={() => setFilter("mern")}>MERN</button>
-        {/* <button className={filter === "react" ? "active" : ""} onClick={() => setFilter("react")}>React</button> */}
+        <button className={filter === "react" ? "active" : ""} onClick={() => setFilter("react")}>React</button>
+        {/* <button className={filter === "mern" ? "active" : ""} onClick={() => setFilter("mern")}>React</button> */}
       </div>
 
       {/* Projects */}
       <div className="slider">
-        {filteredProjects.map(p => (
-            <a 
+  {filteredProjects.map(p => (
+    <a 
       key={p.id} 
       href={p.link} 
       target="_blank" 
       rel="noopener noreferrer" 
-      style={{ textDecoration: "none" }}
+      style={{ textDecoration: "none", position: "relative" }}
     >
-          <Card key={p.id} title={p.title} image={p.image} />
-          </a>
-        ))}
-      </div>
+      <Card title={p.title} image={p.image} />
+
+      {/* Small Live button inside image */}
+      <span className="live-btn">
+        Live <i className="fa-solid fa-up-right-from-square"></i>
+      </span>
+    </a>
+  ))}
+</div>
+
     </div>
   )
 }

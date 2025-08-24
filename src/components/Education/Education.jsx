@@ -7,49 +7,46 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const Education = () => {
-  useGSAP(() => {
-    let tl = gsap.timeline({
+useGSAP(() => {
+    gsap.from(".education-card:nth-child(1)", {
+      x: 150, // from right
+      opacity: 0,
+      duration: 1,
       scrollTrigger: {
-        trigger: ".education-section",
+        trigger: ".education-card:nth-child(1)",
         scroller: "body",
         start: "top 80%",
-        end: "bottom 60%",
-        scrub: false, // set to true if you want smooth scroll-linked animation
-        toggleActions: "play reverse play reverse",
+        end: "top 30%",
+        scrub: 2,
       },
     });
 
-    // Animate Section Title
-    tl.from(".section-title", {
-      y: 50,
+    gsap.from(".education-card:nth-child(2)", {
+      y: 120, // from bottom
       opacity: 0,
-      duration: 0.5,
-      ease: "power3.out",
-    })
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".education-card:nth-child(2)",
+        scroller: "body",
+        start: "top 80%",
+        end: "top 30%",
+        scrub: 2,
+      },
+    });
 
-      // Animate Cards
-      .from(".education-card", {
-        y: 40,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.3,
-        ease: "power2.out",
-      })
-
-      // Animate content inside each card
-      .from(
-        ".education-card h3, .education-card p",
-        {
-          y: 15,
-          opacity: 0,
-          duration: 0.3,
-          stagger: 0.05,
-          ease: "power1.out",
-        },
-        "-=0.3" // slightly overlap with previous animation
-      );
+    gsap.from(".education-card:nth-child(3)", {
+      x: -150, // from left
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".education-card:nth-child(3)",
+        scroller: "body",
+        start: "top 80%",
+        end: "top 30%",
+        scrub: 2,
+      },
+    });
   }, []);
-
   const educationData = [
     {
       degree: "Bachelor of Science",
