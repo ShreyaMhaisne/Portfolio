@@ -4,46 +4,70 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+// FontAwesome & other icons
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaAngular,
+  FaNodeJs,
+  FaBootstrap,
+  FaGitAlt,
+  FaGithub,
+  FaFigma,
+} from "react-icons/fa";
+import { 
+  SiNextdotjs,
+  SiTailwindcss,
+  SiGreensock,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
+  SiPostgresql,
+  SiMysql,
+  SiVercel,
+  SiNetlify,
+  // SiVisualstudiocode,
+  SiPostman,
+  SiPython,
+} from "react-icons/si";
+
+import { DiJava } from "react-icons/di";   // Java
+import { FaCuttlefish } from "react-icons/fa"; // "C" language (C logo is not in SI)
+import { SiCplusplus as SiCpp } from "react-icons/si";
+
+
+// import { DiJava } from "react-icons/di";
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
   useGSAP(() => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".skills-section",
-        scroller: "body",
-        start: "top 80%",
-        end: "bottom 60%",
-        scrub: false,
-        toggleActions: "play reverse play reverse",
-      }
-    });
-
-    tl.from(".skills-section", {
+    gsap.from(".skill-card", {
       y: 50,
       opacity: 0,
+      duration: 0.6,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".skills-grid",
+        scroller: "body",
+        start: "top 80%",
+        end: "top 30%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    gsap.from(".skill", {
+      scale: 0.5,
+      opacity: 0,
       duration: 0.4,
-      ease: "power3.out"
-    })
-    .from(".skills-section p", {
-      y: 30,
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.out"
-    }, "-=0.4")
-    .from(".skill-card", {
-      y: 40,
-      opacity: 0,
-      duration: 0.3,
-      stagger: 0.3,
-      ease: "power2.out"
-    })
-    .from(".skill", {
-      y: 20,
-      opacity: 0,
-      duration: 0.3,
       stagger: 0.05,
-      ease: "power1.out"
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: ".skills-grid",
+        scroller: "body",
+        start: "top 80%",
+      },
     });
   }, []);
 
@@ -56,20 +80,19 @@ const Skills = () => {
       </p>
 
       <div className="skills-grid">
-
         {/* Frontend */}
         <div className="skill-card">
           <h3>Frontend</h3>
           <div className="skill-items">
-            <div className="skill html">HTML</div>
-            <div className="skill css">CSS</div>
-            <div className="skill js">JavaScript</div>
-            <div className="skill react">React JS</div>
-            <div className="skill angular">Angular</div>
-            <div className="skill next">Next JS</div>
-            <div className="skill tailwind">Tailwind CSS</div>
-            <div className="skill gsap">GSAP</div>
-            <div className="skill bootstrap">Bootstrap</div>
+            <div className="skill"><FaHtml5 className="icon html" /> HTML</div>
+            <div className="skill"><FaCss3Alt className="icon css" /> CSS</div>
+            <div className="skill"><FaJs className="icon js" /> JavaScript</div>
+            <div className="skill"><FaReact className="icon react" /> React JS</div>
+            <div className="skill"><FaAngular className="icon angular" /> Angular</div>
+            <div className="skill"><SiNextdotjs className="icon next" /> Next JS</div>
+            <div className="skill"><SiTailwindcss className="icon tailwind" /> Tailwind</div>
+            <div className="skill"><SiGreensock className="icon gsap" /> GSAP</div>
+            <div className="skill"><FaBootstrap className="icon bootstrap" /> Bootstrap</div>
           </div>
         </div>
 
@@ -77,12 +100,12 @@ const Skills = () => {
         <div className="skill-card">
           <h3>Backend</h3>
           <div className="skill-items">
-            <div className="skill node">Node JS</div>
-            <div className="skill express">Express JS</div>
-            <div className="skill mysql">MySQL</div>
-            <div className="skill mongodb">MongoDB</div>
-            <div className="skill firebase">Firebase</div>
-            <div className="skill postgres">PostgreSQL</div>
+            <div className="skill"><FaNodeJs className="icon node" /> Node JS</div>
+            <div className="skill"><SiExpress className="icon express" /> Express</div>
+            <div className="skill"><SiMysql className="icon mysql" /> MySQL</div>
+            <div className="skill"><SiMongodb className="icon mongodb" /> MongoDB</div>
+            <div className="skill"><SiFirebase className="icon firebase" /> Firebase</div>
+            <div className="skill"><SiPostgresql className="icon postgres" /> PostgreSQL</div>
           </div>
         </div>
 
@@ -90,10 +113,10 @@ const Skills = () => {
         <div className="skill-card">
           <h3>Languages</h3>
           <div className="skill-items">
-            <div className="skill c">C</div>
-            <div className="skill cpp">C++</div>
-            <div className="skill java">Java</div>
-            <div className="skill python">Python</div>
+            <div className="skill"><FaCuttlefish className="icon c" /> C</div> 
+            <div className="skill"><SiCpp className="icon cpp" /> C++</div> 
+             <div className="skill"><DiJava className="icon java" /> Java</div>
+             <div className="skill"><SiPython className="icon python" /> Python</div>
           </div>
         </div>
 
@@ -101,16 +124,15 @@ const Skills = () => {
         <div className="skill-card">
           <h3>Tools</h3>
           <div className="skill-items">
-            <div className="skill git">Git</div>
-            <div className="skill github">GitHub</div>
-            <div className="skill vscode">VS Code</div>
-            <div className="skill postman">Postman</div>
-            <div className="skill vercel">Vercel</div>
-            <div className="skill netlify">Netlify</div>
-            <div className="skill figma">Figma</div>
+            <div className="skill"><FaGitAlt className="icon git" /> Git</div>
+            <div className="skill"><FaGithub className="icon github" /> GitHub</div>
+            {/* <div className="skill"><SiVisualstudiocode className="icon vscode" /> VS Code</div>  */}
+             <div className="skill"><SiPostman className="icon postman" /> Postman</div> 
+             <div className="skill"><SiVercel className="icon vercel" /> Vercel</div> 
+             <div className="skill"><SiNetlify className="icon netlify" /> Netlify</div>
+            <div className="skill"><FaFigma className="icon figma" /> Figma</div>
           </div>
         </div>
-
       </div>
     </div>
   );

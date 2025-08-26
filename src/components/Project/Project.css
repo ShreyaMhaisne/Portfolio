@@ -1,86 +1,210 @@
-#projects{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    /* background-color: aquamarine; */
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-        padding: 40px 0;
-    overflow: hidden;
-}
-/* Make link act as container for positioning */
-.slider a {
-  position: relative;
+/* Projects Section */
+#projects {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  flex: 0 0 auto;
-  text-decoration: none;
-  color: inherit;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px 0;
+  overflow: hidden;
 }
 
-/* Live button style */
-.live-btn {
-  position: absolute;
-  bottom: 10px;
-  right: 7px;
-  background: linear-gradient(to right, #2784e1, #aa67e8);
-  color: #fff;
-  font-size: 13px;
-  padding: 6px 14px;
-  border-radius: 6px;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.2s ease;
+/* Project slider */
+.slider {
+  width: 90%;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 30px;
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}
+/* Bottom Half - Title + LongDesc */
+.project-info-box {
+  height: 40%;
+  padding: 12px;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+/* Tech icons */
+.icons {
+  display: flex;
+  gap: 12px;
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+.icons i {
+  transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
-/* Show only on hover */
-.slider a:hover .live-btn {
-  opacity: 1;
+/* Default colors */
+.fa-js {
+  color: #f7df1e; /* yellow */
+}
+.fa-react {
+  color: #61dafb; /* react blue */
+}
+.fa-html5 {
+  color: #e34f26; /* orange */
+}
+.fa-css3-alt {
+  color: #1572b6; /* css blue */
+}
+
+/* Hover effects */
+.icons i:hover {
+  transform: scale(1.3) rotate(10deg);
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.project-info-box h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.project-info-box .long-desc {
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.3;
+  text-align: left;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* shows max 4 lines */
+  -webkit-box-orient: vertical;
+}
+
+
+/* Card */
+.project-card {
+  position: relative;
+  width: 380px;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+.project-card:hover {
   transform: scale(1.05);
 }
 
-.slider{
-    width: 90%;
-    padding: 20px;
-    height: 300px;
-    display: flex;
-    align-items: flex-start;
-    overflow-x: scroll;
-    scrollbar-width: none;
-    overflow-y: hidden;
-    gap: 30px;
+/* Top Half - Image */
+.project-img-box {
+  height: 60%;
+  width: 100%;
 }
-.slider a {
-  display: flex;         /* so the Card inside stays sized properly */
-  flex: 0 0 auto;         /* prevents shrinking */
-  /* height: 350px;           match the slider height */
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bottom Half - Title */
+.project-title-box {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+}
+.project-title-box h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 15px;
+  text-align: center;
+}
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+/* Tech icons */
+.icons {
+  display: flex;
+  gap: 10px;
+  font-size: 1.3rem;
+  margin: 8px 0;
+}
+.icons i {
+  transition: transform 0.2s;
+}
+.icons i:hover {
+  transform: scale(1.2);
+  color: #00d8ff;
+}
+
+/* Live button */
+.live-btn {
+  margin-top: 10px;
+  background: linear-gradient(to right, #2784e1, #aa67e8);
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
   text-decoration: none;
-  color: inherit;
 }
-.card {
-  width: 300px;  /* wider cards */
+.live-btn:hover {
+  transform: scale(1.1);
 }
-#para{
-    font-size: 4vmax;
- background: linear-gradient(to right, #8ec5fc, #e0c3fc);
-    background-clip: text;
-    text-align: center;
-    color: transparent;
+
+/* Title styling */
+#para {
+  font-size: 4vmax;
+  background: linear-gradient(to right, #8ec5fc, #e0c3fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
 }
+
+/* Filter buttons */
 .project-filters {
   display: flex;
   gap: 12px;
   justify-content: center;
-  /* background-color: #bf77f3; */
   margin: 10px;
   flex-wrap: wrap;
 }
 
 .project-filters button {
   padding: 8px 18px;
-  margin: 4px 0px 0px 0px;
   border: none;
   background: #ddd;
   border-radius: 6px;
@@ -88,15 +212,13 @@
   font-size: 15px;
   transition: background 0.3s, transform 0.2s;
 }
-
 .project-filters button:hover {
   background: #bbb;
   transform: scale(1.05);
-   box-shadow: 2px 2px 10px rgb(223, 159, 248);
+  box-shadow: 2px 2px 10px rgb(223, 159, 248);
 }
-
 .project-filters button.active {
-background: linear-gradient(to right, #bf77f3);
+  background: linear-gradient(to right, #bf77f3, #8a2be2);
   color: white;
   transform: scale(1.05);
 }
