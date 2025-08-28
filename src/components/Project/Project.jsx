@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import curr from "../../assets/currency.png"
 import nc from "../../assets/Netflix.png"
 import Nykaa from "../../assets/Nykaa.png"
@@ -16,78 +16,16 @@ ScrollTrigger.defaults({ markers: false });
 
 const Project = () => {
   const [filter, setFilter] = useState("all");
+  const sliderRef = useRef(null);
 
   const projects = [
-    {
-      id: 1,
-      title: "Currency Converter",
-      image: curr,
-      category: "js",
-      link: "https://currency-converter-omega-amber.vercel.app/",
-      desc: "Convert currencies using real-time exchange rates.",
-      longDesc: "A simple yet functional Currency Converter built using HTML, CSS, and JavaScript. It allows users to seamlessly convert one currency into another in real-time by fetching live exchange rates through an API.",
-      tech: ["fa-brands fa-js","fa-brands fa-html5", "fa-brands fa-css3-alt"]
-    },
-    {
-      id: 2,
-      title: "React Netflix Clone",
-      image: nc,
-      category: "react",
-      link: "https://netflix-clone-sigma-pink-84.vercel.app/login",
-      desc: "Netflix UI clone built with React and Firebase.",
-      longDesc: "A Netflix clone built with ReactJS and Firebase for authentication and hosting. It replicates the UI of Netflix with dynamic components, responsive design, and user login features.",
-      tech: ["fa-brands fa-react", "fa-brands fa-js"]
-    },
-    {
-      id: 3,
-      title: "Nykaa Website Static",
-      image: Nykaa,
-      category: "htmlcss",
-      link: "https://nykaa-static-website.vercel.app/",
-      desc: "A static clone of Nykaa website.",
-      longDesc: "A static front-end clone of the Nykaa e-commerce platform built using HTML and CSS. Focused on layout, styling, and replicating the real website’s look and feel.",
-      tech: ["fa-brands fa-html5", "fa-brands fa-css3-alt"]
-    },
-    {
-      id: 4,
-      title: "Stop Watch",
-      image: stop,
-      category: "js",
-      link: "https://stop-watch-eight-amber.vercel.app/",
-      desc: "A digital stopwatch with start/stop/reset features.",
-      longDesc: "A stopwatch app created with JavaScript that lets users start, pause, reset, and track time with precision. Clean UI with intuitive controls.",
-      tech: ["fa-brands fa-js","fa-brands fa-html5", "fa-brands fa-css3-alt"]
-    },
-    {
-      id: 5,
-      title: "Paroz Static Website",
-      image: paroz,
-      category: "htmlcss",
-      link: "https://paroz-static-website.vercel.app/",
-      desc: "Static website for Paroz brand.",
-      longDesc: "A static website designed for the Paroz brand using only HTML and CSS. Highlights responsive layout, branding, and user-friendly design.",
-      tech: ["fa-brands fa-html5", "fa-brands fa-css3-alt"]
-    },
-    {
-      id: 6,
-      title: "Hotel Booking Clerk",
-      image: hotel,
-      category: "react",
-      link: "https://hotel-booking-dusky-alpha.vercel.app/",
-      desc: "Hotel booking system with React + Clerk auth.",
-      longDesc: "A React-based hotel booking system integrated with Clerk for authentication. Users can sign up, log in, and manage bookings with a modern UI.",
-      tech: ["fa-brands fa-react", "fa-brands fa-js"]
-    },
-    {
-      id: 7,
-      title: "Static Bakery Website",
-      image: bakery,
-      category: "htmlcss",
-      link: "https://static-bakery-website.vercel.app/",
-      desc: "Static bakery shop website.",
-      longDesc: "A bakery shop website built with HTML and CSS showcasing the brand’s products, simple navigation, and responsive design for all devices.",
-      tech: ["fa-brands fa-html5", "fa-brands fa-css3-alt"]
-    },
+    { id: 1, title: "Currency Converter", image: curr, category: "js", link: "https://currency-converter-omega-amber.vercel.app/", desc: "Convert currencies using real-time exchange rates.", longDesc: "A simple yet functional Currency Converter built using HTML, CSS, and JavaScript...", tech: ["fa-brands fa-js","fa-brands fa-html5", "fa-brands fa-css3-alt"] },
+    { id: 2, title: "React Netflix Clone", image: nc, category: "react", link: "https://netflix-clone-sigma-pink-84.vercel.app/login", desc: "Netflix UI clone built with React and Firebase.", longDesc: "A Netflix clone built with ReactJS and Firebase...", tech: ["fa-brands fa-react", "fa-brands fa-js"] },
+    { id: 3, title: "Nykaa Website Static", image: Nykaa, category: "htmlcss", link: "https://nykaa-static-website.vercel.app/", desc: "A static clone of Nykaa website.", longDesc: "A static front-end clone of the Nykaa e-commerce platform...", tech: ["fa-brands fa-html5", "fa-brands fa-css3-alt"] },
+    { id: 4, title: "Stop Watch", image: stop, category: "js", link: "https://stop-watch-eight-amber.vercel.app/", desc: "A digital stopwatch with start/stop/reset features.", longDesc: "A stopwatch app created with JavaScript...", tech: ["fa-brands fa-js","fa-brands fa-html5", "fa-brands fa-css3-alt"] },
+    { id: 5, title: "Paroz Static Website", image: paroz, category: "htmlcss", link: "https://paroz-static-website.vercel.app/", desc: "Static website for Paroz brand.", longDesc: "A static website designed for the Paroz brand...", tech: ["fa-brands fa-html5", "fa-brands fa-css3-alt"] },
+    { id: 6, title: "Hotel Booking Clerk", image: hotel, category: "react", link: "https://hotel-booking-dusky-alpha.vercel.app/", desc: "Hotel booking system with React + Clerk auth.", longDesc: "A React-based hotel booking system integrated with Clerk...", tech: ["fa-brands fa-react", "fa-brands fa-js"] },
+    { id: 7, title: "Static Bakery Website", image: bakery, category: "htmlcss", link: "https://static-bakery-website.vercel.app/", desc: "Static bakery shop website.", longDesc: "A bakery shop website built with HTML and CSS...", tech: ["fa-brands fa-html5", "fa-brands fa-css3-alt"] }
   ];
 
   useGSAP(() => {
@@ -130,6 +68,21 @@ const Project = () => {
         end: "top 30%"
       }
     });
+
+    if (sliderRef.current) {
+      let scrollWidth = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+
+      gsap.to(sliderRef.current, {
+        scrollLeft: scrollWidth,
+        duration: 20,
+        ease: "linear",
+        repeat: -1,
+        yoyo: true
+      });
+
+      sliderRef.current.addEventListener("mouseenter", () => gsap.globalTimeline.pause());
+      sliderRef.current.addEventListener("mouseleave", () => gsap.globalTimeline.resume());
+    }
   }, []);
 
   const filteredProjects = filter === "all"
@@ -148,37 +101,32 @@ const Project = () => {
         <button className={filter === "react" ? "active" : ""} onClick={() => setFilter("react")}>React</button>
       </div>
 
-      {/* Projects */}
-      <div className="slider">
-        {filteredProjects.map(p => (
-          <div key={p.id} className="project-card">
-
-            {/* Top Half - Image */}
-            <div className="project-img-box">
-              <img src={p.image} alt={p.title} className="project-img" />
-            </div>
-
-            {/* Bottom Half - Title */}
-            <div className="project-info-box">
-              <h3>{p.title}</h3>
-              <p className="long-desc">{p.longDesc}</p>
-            </div>
-
-            {/* Hover Overlay */}
-            <div className="overlay">
-              <p>{p.desc}</p>
-              <div className="icons">
-                {p.tech.map((icon, i) => (
-                  <i key={i} className={icon}></i>
-                ))}
+      {/* Slider without arrows */}
+      <div className="slider-wrapper">
+        <div className="slider" ref={sliderRef}>
+          {filteredProjects.map(p => (
+            <div key={p.id} className="project-card">
+              <div className="project-img-box">
+                <img src={p.image} alt={p.title} className="project-img" />
               </div>
-              <a href={p.link} target="_blank" rel="noopener noreferrer" className="live-btn">
-                Live <i className="fa-solid fa-up-right-from-square"></i>
-              </a>
+              <div className="project-info-box">
+                <h3>{p.title}</h3>
+                <p className="long-desc">{p.longDesc}</p>
+              </div>
+              <div className="overlay">
+                <p>{p.desc}</p>
+                <div className="icons">
+                  {p.tech.map((icon, i) => (
+                    <i key={i} className={icon}></i>
+                  ))}
+                </div>
+                <a href={p.link} target="_blank" rel="noopener noreferrer" className="live-btn">
+                  Live <i className="fa-solid fa-up-right-from-square"></i>
+                </a>
+              </div>
             </div>
-
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )

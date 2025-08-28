@@ -4,41 +4,36 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-// FontAwesome & other icons
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaAngular,
-  FaNodeJs,
-  FaBootstrap,
-  FaGitAlt,
-  FaGithub,
-  FaFigma,
-} from "react-icons/fa";
-import { 
-  SiNextdotjs,
-  SiTailwindcss,
-  SiGreensock,
-  SiExpress,
-  SiMongodb,
-  SiFirebase,
-  SiPostgresql,
-  SiMysql,
-  SiVercel,
-  SiNetlify,
-  // SiVisualstudiocode,
-  SiPostman,
-  SiPython,
-} from "react-icons/si";
+// Import PNG images
+import htmlLogo from "../../assets/html.png";
+import cssLogo from "../../assets/css.png";
+import jsLogo from "../../assets/js.png";
+import reactLogo from "../../assets/react.png";
+import angularLogo from "../../assets/angular.png";
+import nextLogo from "../../assets/nextjs.png";
+import tailwindLogo from "../../assets/tailwind.png";
+// import gsapLogo from "../../assets/gsap.png";
+import bootstrapLogo from "../../assets/bootstrap.png";
 
-import { DiJava } from "react-icons/di";   // Java
-import { FaCuttlefish } from "react-icons/fa"; // "C" language (C logo is not in SI)
-import { SiCplusplus as SiCpp } from "react-icons/si";
+import nodeLogo from "../../assets/node.png";
+import expressLogo from "../../assets/express.png";
+import mysqlLogo from "../../assets/mysql.png";
+import mongodbLogo from "../../assets/monnodb.png";
+// import firebaseLogo from "../../assets/firebase.png";
+import postgresLogo from "../../assets/postgress.png";
 
+import cLogo from "../../assets/c.png";
+import cppLogo from "../../assets/cpp.png";
+import javaLogo from "../../assets/java.png";
+import pythonLogo from "../../assets/python.png";
 
-// import { DiJava } from "react-icons/di";
+import gitLogo from "../../assets/git.png";
+import githubLogo from "../../assets/github.png";
+import postmanLogo from "../../assets/postman.png";
+import vercelLogo from "../../assets/vercel.png";
+import netlifyLogo from "../../assets/netlify.png";
+import figmaLogo from "../../assets/figma.png";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
@@ -84,15 +79,15 @@ const Skills = () => {
         <div className="skill-card">
           <h3>Frontend</h3>
           <div className="skill-items">
-            <div className="skill"><FaHtml5 className="icon html" /> HTML</div>
-            <div className="skill"><FaCss3Alt className="icon css" /> CSS</div>
-            <div className="skill"><FaJs className="icon js" /> JavaScript</div>
-            <div className="skill"><FaReact className="icon react" /> React JS</div>
-            <div className="skill"><FaAngular className="icon angular" /> Angular</div>
-            <div className="skill"><SiNextdotjs className="icon next" /> Next JS</div>
-            <div className="skill"><SiTailwindcss className="icon tailwind" /> Tailwind</div>
-            <div className="skill"><SiGreensock className="icon gsap" /> GSAP</div>
-            <div className="skill"><FaBootstrap className="icon bootstrap" /> Bootstrap</div>
+            <div className="skill"><img src={htmlLogo} alt="HTML" /> HTML</div>
+            <div className="skill"><img src={cssLogo} alt="CSS" /> CSS</div>
+            <div className="skill"><img src={jsLogo} alt="JavaScript" /> JavaScript</div>
+            <div className="skill"><img src={reactLogo} alt="React" /> React JS</div>
+            <div className="skill"><img src={angularLogo} alt="Angular" /> Angular</div>
+            <div className="skill"><img src={nextLogo} alt="Next JS" /> Next JS</div>
+            <div className="skill"><img src={tailwindLogo} alt="Tailwind" /> Tailwind</div>
+            {/* <div className="skill"><img src={gsapLogo} alt="GSAP" /> GSAP</div> */}
+            <div className="skill"><img src={bootstrapLogo} alt="Bootstrap" /> Bootstrap</div>
           </div>
         </div>
 
@@ -100,12 +95,12 @@ const Skills = () => {
         <div className="skill-card">
           <h3>Backend</h3>
           <div className="skill-items">
-            <div className="skill"><FaNodeJs className="icon node" /> Node JS</div>
-            <div className="skill"><SiExpress className="icon express" /> Express</div>
-            <div className="skill"><SiMysql className="icon mysql" /> MySQL</div>
-            <div className="skill"><SiMongodb className="icon mongodb" /> MongoDB</div>
-            <div className="skill"><SiFirebase className="icon firebase" /> Firebase</div>
-            <div className="skill"><SiPostgresql className="icon postgres" /> PostgreSQL</div>
+            <div className="skill"><img src={nodeLogo} alt="Node.js" /> Node JS</div>
+            <div className="skill"><img src={expressLogo} alt="Express" /> Express</div>
+            <div className="skill"><img src={mysqlLogo} alt="MySQL" /> MySQL</div>
+            <div className="skill"><img src={mongodbLogo} alt="MongoDB" /> MongoDB</div>
+            {/* <div className="skill"><img src={firebaseLogo} alt="Firebase" /> Firebase</div> */}
+            <div className="skill"><img src={postgresLogo} alt="PostgreSQL" /> PostgreSQL</div>
           </div>
         </div>
 
@@ -113,10 +108,10 @@ const Skills = () => {
         <div className="skill-card">
           <h3>Languages</h3>
           <div className="skill-items">
-            <div className="skill"><FaCuttlefish className="icon c" /> C</div> 
-            <div className="skill"><SiCpp className="icon cpp" /> C++</div> 
-             <div className="skill"><DiJava className="icon java" /> Java</div>
-             <div className="skill"><SiPython className="icon python" /> Python</div>
+            <div className="skill"><img src={cLogo} alt="C" /> C</div>
+            <div className="skill"><img src={cppLogo} alt="C++" /> C++</div>
+            <div className="skill"><img src={javaLogo} alt="Java" /> Java</div>
+            <div className="skill"><img src={pythonLogo} alt="Python" /> Python</div>
           </div>
         </div>
 
@@ -124,13 +119,12 @@ const Skills = () => {
         <div className="skill-card">
           <h3>Tools</h3>
           <div className="skill-items">
-            <div className="skill"><FaGitAlt className="icon git" /> Git</div>
-            <div className="skill"><FaGithub className="icon github" /> GitHub</div>
-            {/* <div className="skill"><SiVisualstudiocode className="icon vscode" /> VS Code</div>  */}
-             <div className="skill"><SiPostman className="icon postman" /> Postman</div> 
-             <div className="skill"><SiVercel className="icon vercel" /> Vercel</div> 
-             <div className="skill"><SiNetlify className="icon netlify" /> Netlify</div>
-            <div className="skill"><FaFigma className="icon figma" /> Figma</div>
+            <div className="skill"><img src={gitLogo} alt="Git" /> Git</div>
+            <div className="skill"><img src={githubLogo} alt="GitHub" /> GitHub</div>
+            <div className="skill"><img src={postmanLogo} alt="Postman" /> Postman</div>
+            <div className="skill"><img src={vercelLogo} alt="Vercel" /> Vercel</div>
+            <div className="skill"><img src={netlifyLogo} alt="Netlify" /> Netlify</div>
+            <div className="skill"><img src={figmaLogo} alt="Figma" /> Figma</div>
           </div>
         </div>
       </div>

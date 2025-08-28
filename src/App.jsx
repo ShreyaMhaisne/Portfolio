@@ -11,6 +11,7 @@ import Nav from "./components/Nav/Nav";
 import Education from "./components/Education/Education"
 import Project from "./components/Project/Project"
 import Contact from "./components/Contact/Contact"
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -82,6 +83,7 @@ function App() {
       <Education />
       <Project />
       <Contact/>
+      <Footer />
     </div>
   );
 }
